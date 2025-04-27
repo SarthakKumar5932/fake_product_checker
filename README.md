@@ -42,6 +42,7 @@ video explanation
     "\n",
     "Contact\n",
     "- Email: sarthak4252@gmail.com"
+     - Email: kritikag674@gmail.com"
    ]
   }
  ],
