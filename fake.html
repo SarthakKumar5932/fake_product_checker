@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Product Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .verified {
+            color: green;
+        }
+        .fake {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌟 Welcome to the Amazing Fake Product Checker 🌟</h1>
+    <input type="text" id="productID" placeholder="🚀 Enter Your Product ID">
+    <br>
+    <button onclick="checkProduct()">Check Product</button>
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    const verifiedProducts = ["ABC123", "GHG422", "QWE211", "FJJ215", "1234", "SDFH", "56734", "GATE1"];
+
+    function checkProduct() {
+        const userInput = document.getElementById('productID').value.trim().toUpperCase();
+        const resultDiv = document.getElementById('result');
+
+        if (verifiedProducts.includes(userInput)) {
+            resultDiv.innerHTML = "🎉 Result: Yes! Verified Product! 🎉";
+            resultDiv.className = "result verified";
+        } else {
+            resultDiv.innerHTML = "🚫 Result: Oops! Fake Product Detected! 🚫";
+            resultDiv.className = "result fake";
+        }
+    }
+</script>
+
+</body>
+</html>
